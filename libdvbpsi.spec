@@ -8,6 +8,8 @@ Group:		Libraries
 Source0:	http://download.videolan.org/pub/libdvbpsi/%{version}/%{name}3-%{version}.tar.gz
 # Source0-md5:	6a8b35108e5aec5a55aad29f2350c3e2
 URL:		http://developers.videolan.org/libdvbpsi/
+BuildRequires:	autoconf >= 2.50
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -46,8 +48,8 @@ Statyczna biblioteka libdvbpsi.
 %setup -q -n %{name}3-%{version}
 
 %build
+cp -f /usr/share/automake/config.sub autotools
 %{__autoconf}
-cp -f /usr/share/automake/config.sub autotools/
 %configure
 %{__make}
 
