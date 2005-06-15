@@ -1,3 +1,4 @@
+%bcond_without	static_libs	# don't build static library
 Summary:	Library for decoding and generation of MPEG TS and DVB PSI tables
 Summary(pl):	Biblioteka do dekodowania i generowania tablic MPEG TS i DVB PSI
 Name:		libdvbpsi
@@ -10,6 +11,7 @@ Source0:	http://download.videolan.org/pub/libdvbpsi/%{version}/%{name}3-%{versio
 URL:		http://developers.videolan.org/libdvbpsi/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -48,9 +50,12 @@ Statyczna biblioteka libdvbpsi.
 %setup -q -n %{name}3-%{version}
 
 %build
-cp -f /usr/share/automake/config.sub autotools
+%{__libtoolize}
+%{__aclocal}
 %{__autoconf}
-%configure
+%{__automake}
+%configure \
+	%{!?with_static_libs:--disable-static}
 %{__make}
 
 %install
@@ -76,6 +81,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libdvbpsi.la
 %{_includedir}/dvbpsi
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libdvbpsi.a
+%endif
