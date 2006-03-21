@@ -1,3 +1,4 @@
+#
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
@@ -55,6 +56,7 @@ Statyczna biblioteka libdvbpsi.
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure \
 	%{!?with_static_libs:--disable-static}
@@ -74,7 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/libdvbpsi.so.*.*.*
 
 %files devel
