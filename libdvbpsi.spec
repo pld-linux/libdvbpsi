@@ -4,12 +4,12 @@
 Summary:	Library for decoding and generation of MPEG TS and DVB PSI tables
 Summary(pl):	Biblioteka do dekodowania i generowania tablic MPEG TS i DVB PSI
 Name:		libdvbpsi
-Version:	0.1.4
+Version:	0.1.5
 Release:	2
 License:	GPL
 Group:		Libraries
-Source0:	http://download.videolan.org/pub/libdvbpsi/%{version}/%{name}3-%{version}.tar.gz
-# Source0-md5:	6a8b35108e5aec5a55aad29f2350c3e2
+Source0:	http://download.videolan.org/pub/libdvbpsi/%{version}/%{name}4-%{version}.tar.gz
+# Source0-md5:	76f70a1cd78b513a3e616deade4b5856
 URL:		http://developers.videolan.org/libdvbpsi/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -49,7 +49,7 @@ Static libdvbpsi library.
 Statyczna biblioteka libdvbpsi.
 
 %prep
-%setup -q -n %{name}3-%{version}
+%setup -q -n %{name}4-%{version}
 
 %build
 %{__libtoolize}
