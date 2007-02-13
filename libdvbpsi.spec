@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	Library for decoding and generation of MPEG TS and DVB PSI tables
-Summary(pl.UTF-8):   Biblioteka do dekodowania i generowania tablic MPEG TS i DVB PSI
+Summary(pl.UTF-8):	Biblioteka do dekodowania i generowania tablic MPEG TS i DVB PSI
 Name:		libdvbpsi
 Version:	0.1.5
 Release:	2
@@ -27,7 +27,7 @@ dekodowania i generowania tablic MPEG TS i DVB PSI.
 
 %package devel
 Summary:	Header files for libdvbpsi library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki libdvbpsi
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libdvbpsi
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -39,7 +39,7 @@ Pliki nagłówkowe biblioteki libdvbpsi.
 
 %package static
 Summary:	Static libdvbpsi library
-Summary(pl.UTF-8):   Statyczna biblioteka libdvbpsi
+Summary(pl.UTF-8):	Statyczna biblioteka libdvbpsi
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
