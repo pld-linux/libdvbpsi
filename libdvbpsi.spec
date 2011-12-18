@@ -78,12 +78,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS README
-%attr(755,root,root) %{_libdir}/libdvbpsi.so.*
+%doc AUTHORS NEWS README
+%attr(755,root,root) %{_libdir}/libdvbpsi.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libdvbpsi.so.7
 
 %files devel
 %defattr(644,root,root,755)
-%doc ChangeLog NEWS TODO
+%doc ChangeLog TODO
 %attr(755,root,root) %{_libdir}/libdvbpsi.so
 %{_includedir}/dvbpsi
 %{_pkgconfigdir}/libdvbpsi.pc
